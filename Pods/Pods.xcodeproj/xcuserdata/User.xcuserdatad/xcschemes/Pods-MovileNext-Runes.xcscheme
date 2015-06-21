@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4D23320879ECEF2E2960C2C4"
+               BlueprintIdentifier = "2D66934D3F2DA463E64900CD"
                BuildableName = "Runes.framework"
                BlueprintName = "Pods-MovileNext-Runes"
                ReferencedContainer = "container:Pods.xcodeproj">

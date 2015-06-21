@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import TraktModels
+import Haneke
 
 class ShowsCollectionViewCell: UICollectionViewCell {
     
@@ -14,13 +16,29 @@ class ShowsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var showTitle: UILabel!
     
-    func loadShow(show: [String:String]) {
+    func loadShow(show: Show) {
 
-        for (text, image) in show {
-            showTitle.text = text
+//        for (text, image) in show {
+//            showTitle.text = text
+//        }
+        
+        let placeholder = UIImage(named: "poster")
+        if let image = show.poster?.thumbImageURL{
+            showImage.hnk_setImageFromURL(image, placeholder: placeholder)
         }
+        else
+        {
+            showImage.image = placeholder
+        }
+        
+        showTitle.text = show.title
         
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        showImage.hnk_cancelSetImage()
+        showImage.image = nil
+    }
     
 }

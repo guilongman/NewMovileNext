@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TraktModels
 
 class EpisodeViewController: UIViewController {
 
@@ -16,6 +17,10 @@ class EpisodeViewController: UIViewController {
     
     @IBOutlet weak var descTextView: UITextView!
     
+    let traktClient = TraktHTTPClient()
+    
+    //quando precisar declarar um variável que irá ser usada, pode-se colocar "!" fazendo um unwrap forçado
+    var episode : Episode!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +29,25 @@ class EpisodeViewController: UIViewController {
         descTextView.textContainerInset = UIEdgeInsetsZero
         
         //teste
-        titleLabel.text = "Pilot"
+        loadEpisode(episode!)
         //coverImageView.image = UIImage(named: "bg")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    func loadEpisode(episode: Episode)
+    {
+        let placeholder = UIImage(named: "bg")
+        
+        if let image = episode.screenshot?.fullImageURL{
+            self.coverImageView.hnk_setImageFromURL(image, placeholder: placeholder)
+        }
+        else
+        {
+            self.coverImageView.image = placeholder
+        }
+        
+        self.titleLabel.text = episode.title
+        self.descTextView.text = episode.overview
+    }
     
     @IBAction func sharePressed(sender: UIBarButtonItem) {
         

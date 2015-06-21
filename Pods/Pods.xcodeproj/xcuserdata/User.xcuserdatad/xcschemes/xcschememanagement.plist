@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MovileNext-HanekeSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MovileNext-ISO8601DateFormatter.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,62 +72,67 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>08C8D84BD9423C58A9C9D79E</key>
+		<key>025CC47A54D70980AE4C7FAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0FCC353B1CC410D7FCAA814E</key>
+		<key>20AA4FADEE1CCADCEE0431AF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3C7921548276753152DD87AF</key>
+		<key>2D66934D3F2DA463E64900CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3EE1B620239A2C8CEEDE439A</key>
+		<key>42D54B6B62ADE1E3E6C19415</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>49D7A739023040DD09C6C9BA</key>
+		<key>4FF9E83486995B6238AE5C79</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4D23320879ECEF2E2960C2C4</key>
+		<key>5EB61801E76EAF8DA5826442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>85847D8CF5175274C8A7CEDF</key>
+		<key>697EAA76BAC449EFA9A08955</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8B5BE66AD661B6572F173264</key>
+		<key>87BAFAF2A59A71A85BC0AE1F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BE08B6D75B0894CD36DC3393</key>
+		<key>98ED0DCAAF6D5CBDA11BBDCC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C154DA77B09C11396E85C19E</key>
+		<key>B0B979240E51A82E57754B7A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D3946B23E4FA7DF97F0A6445</key>
+		<key>C61EA5F32DA4A4EF27A8E3F6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FEA00DA42ED176DC8F8258A7</key>
+		<key>E9D2DC77EA9D19394D64DDBE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F4A22B982812D3B6FD21A956</key>
 		<dict>
 			<key>primary</key>
 			<true/>

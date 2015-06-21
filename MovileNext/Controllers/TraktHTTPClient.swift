@@ -54,22 +54,28 @@ class TraktHTTPClient {
         manager.request(router).validate().responseJSON { (_, _, jsonResponse, error) in
             if let jsonData = jsonResponse as? [NSDictionary]
             {
-                var elements : [T] = []
-                
-                for i in 0...jsonData.count-1
-                {
-                    let decoded = T.decode(JSON.parse(jsonData[i]))
-                    if let value = decoded.value
-                    {
-                        elements.append(value)
-                    }
-                    else
-                    {
-                        completion?(Result.failure(nil))
-                    }
-                }
-                
+//                let elements : [T] = []
+                let elements = jsonData.map { T.decode(JSON.parse($0)).value }.filter { $0 != nil }.map { $0! }
                 completion?(Result.success(elements))
+                //codigo acima é a mesma implementação do código abaixo
+                //primeiro map, faz o decode do valor
+                //filter remove valores nulos
+                //segundo map, faz o unwrape dos elementos
+//                
+//                for i in 0...jsonData.count-1
+//                {
+//                    let decoded = T.decode(JSON.parse(jsonData[i]))
+//                    if let value = decoded.value
+//                    {
+//                        elements.append(value)
+//                    }
+//                    else
+//                    {
+//                        completion?(Result.failure(nil))
+//                    }
+//                }
+//                
+//                completion?(Result.success(elements))
             }
             else
             {

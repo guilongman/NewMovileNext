@@ -160,11 +160,11 @@ extension UIStoryboardSegue {
 extension SeasonViewController { 
 
     enum Segue: String, Printable, SegueProtocol {
-        case ShowEpisode = "ShowEpisode"
+        case season_to_episode = "season_to_episode"
 
         var kind: SegueKind? {
             switch (self) {
-            case ShowEpisode:
+            case season_to_episode:
                 return SegueKind(rawValue: "show")
             default:
                 preconditionFailure("Invalid value")
@@ -174,7 +174,7 @@ extension SeasonViewController {
 
         var destination: UIViewController.Type? {
             switch (self) {
-            case ShowEpisode:
+            case season_to_episode:
                 return EpisodeViewController.self
             default:
                 assertionFailure("Unknown destination")
@@ -219,6 +219,45 @@ extension SeasonViewController {
 
 
 //MARK: - ShowsViewController
+extension UIStoryboardSegue {
+    func selection() -> ShowsViewController.Segue? {
+        if let identifier = self.identifier {
+            return ShowsViewController.Segue(rawValue: identifier)
+        }
+        return nil
+    }
+}
+
+extension ShowsViewController { 
+
+    enum Segue: String, Printable, SegueProtocol {
+        case shows_to_episodes = "shows_to_episodes"
+
+        var kind: SegueKind? {
+            switch (self) {
+            case shows_to_episodes:
+                return SegueKind(rawValue: "show")
+            default:
+                preconditionFailure("Invalid value")
+                break
+            }
+        }
+
+        var destination: UIViewController.Type? {
+            switch (self) {
+            case shows_to_episodes:
+                return SeasonViewController.self
+            default:
+                assertionFailure("Unknown destination")
+                return nil
+            }
+        }
+
+        var identifier: String? { return self.description } 
+        var description: String { return self.rawValue }
+    }
+
+}
 extension ShowsViewController { 
 
     enum Reusable: String, Printable, ReusableProtocol {

@@ -16,37 +16,42 @@ class ShowsViewController: UIViewController, UICollectionViewDelegate {
 
     let traktClient = TraktHTTPClient()
     
+    //quando se declara uma variável com ?, indica que ela poderá ser usada ou não na aplicação
+    var shows : [Show]? = []
+    
     //let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
     
-    let allShows = [ ["GoT": "x"] , ["American Horor History" : "y"], ["GoT": "x"] , ["American Horor History" : "y"], ["GoT": "x"] , ["American Horor History" : "y"], ["GoT": "x"] , ["American Horor History" : "y"], ["GoT": "x"]]
+    //let allShows = [ ["GoT": "x"] , ["American Horor History" : "y"], ["GoT": "x"] , ["American Horor History" : "y"], ["GoT": "x"] , ["American Horor History" : "y"], ["GoT": "x"] , ["American Horor History" : "y"], ["GoT": "x"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        traktClient.getShow("game-of-thrones") //{ _ in }
-        traktClient.getEpisode("game-of-thrones", season: 5, episodeNumber: 10)
-        traktClient.getPopularShows(){ x in
-            for a in x.value!
-            {
-                println(a.title)
-            }
-        }
+        loadPopularShows()
         
-        traktClient.getSeasons("game-of-thrones"){ x in
-            for a in x.value!
-            {
-                println(a.number)
-                println(a.episodeCount)
-            }
-        }
-        
-        traktClient.getEpisodes("game-of-thrones", season: 0){
-            x in
-            for a in x.value!
-            {
-                println(a.title)
-            }
-        }
+//        traktClient.getShow("game-of-thrones") //{ _ in }
+//        traktClient.getEpisode("game-of-thrones", season: 5, episodeNumber: 10)
+//        traktClient.getPopularShows(){ [weak self] x in
+//            for a in x.value!
+//            {
+//                println(a.title)
+//            }
+//        }
+//        
+//        traktClient.getSeasons("game-of-thrones"){ x in
+//            for a in x.value!
+//            {
+//                println(a.number)
+//                println(a.episodeCount)
+//            }
+//        }
+//        
+//        traktClient.getEpisodes("game-of-thrones", season: 0){
+//            x in
+//            for a in x.value!
+//            {
+//                println(a.title)
+//            }
+//        }
         
         // Do any additional setup after loading the view.
     }
@@ -56,9 +61,23 @@ class ShowsViewController: UIViewController, UICollectionViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func loadPopularShows ()
+    {
+        traktClient.getPopularShows{ [weak self] popular in
+            if let values = popular.value {
+                self?.shows = values
+                self?.showCollection.reloadData()
+            }
+            else{
+                //ou talvez colocar num log de erro
+                println("Erro: \(popular.error)")
+            }
+        }
+    }
+    
     //defini a quantidade de elementos que terão na tela
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return self.shows!.count
     }
     
     //defini a exibição (itera) esses elementos na tela
@@ -67,7 +86,7 @@ class ShowsViewController: UIViewController, UICollectionViewDelegate {
         
         let cell = showCollection.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! ShowsCollectionViewCell
         
-        let show = allShows[indexPath.row]
+        let show = shows![indexPath.row]
         
         cell.loadShow(show)
         
@@ -93,6 +112,51 @@ class ShowsViewController: UIViewController, UICollectionViewDelegate {
         return UIEdgeInsets(top: flowLayout.sectionInset.top, left: sideSpace, bottom: flowLayout.sectionInset.bottom, right: sideSpace)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue == Segue.shows_to_episodes{
+            if let cell = sender as? UICollectionViewCell,
+                let indexPath = showCollection.indexPathForCell(cell)
+            {
+                let vc = segue.destinationViewController as! SeasonViewController
+                vc.show = shows![indexPath.row].identifiers.slug!
+            }
+        }
+    }
     
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

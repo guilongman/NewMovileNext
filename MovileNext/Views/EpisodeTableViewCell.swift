@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TraktModels
 
 // SETAR O STYLE NO STORYBOARD O STYLE, APONTANDO PARA A ESSA CLASSE
 
