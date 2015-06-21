@@ -7,17 +7,47 @@
 //
 
 import UIKit
+import Result
+import TraktModels
 
 class ShowsViewController: UIViewController, UICollectionViewDelegate {
 
     @IBOutlet weak var showCollection: UICollectionView!
+
+    let traktClient = TraktHTTPClient()
     
-    let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+    //let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
     
     let allShows = [ ["GoT": "x"] , ["American Horor History" : "y"], ["GoT": "x"] , ["American Horor History" : "y"], ["GoT": "x"] , ["American Horor History" : "y"], ["GoT": "x"] , ["American Horor History" : "y"], ["GoT": "x"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        traktClient.getShow("game-of-thrones") //{ _ in }
+        traktClient.getEpisode("game-of-thrones", season: 5, episodeNumber: 10)
+        traktClient.getPopularShows(){ x in
+            for a in x.value!
+            {
+                println(a.title)
+            }
+        }
+        
+        traktClient.getSeasons("game-of-thrones"){ x in
+            for a in x.value!
+            {
+                println(a.number)
+                println(a.episodeCount)
+            }
+        }
+        
+        traktClient.getEpisodes("game-of-thrones", season: 0){
+            x in
+            for a in x.value!
+            {
+                println(a.title)
+            }
+        }
+        
         // Do any additional setup after loading the view.
     }
 

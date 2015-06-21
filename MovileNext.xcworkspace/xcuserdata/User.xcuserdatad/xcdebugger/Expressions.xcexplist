@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "MovileNext.TraktHTTPClient.getShow (MovileNext.TraktHTTPClient)(Swift.String, completion : Swift.Optional&lt;(Result.Result&lt;TraktModels.Show, Swift.Optional&lt;ObjectiveC.NSError&gt;&gt;) -&gt; ()&gt;) -&gt; ():TraktHTTPClient.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "id">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

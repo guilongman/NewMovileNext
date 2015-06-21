@@ -16,7 +16,6 @@ import UIKit
 
 */
 
-
 //utiliza os protocolos UITableViewDataSource e UITableViewDelegate
 class SeasonViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -29,6 +28,8 @@ class SeasonViewController: UIViewController, UITableViewDataSource, UITableView
         
         // Do any additional setup after loading the view.
     }
+    
+  
     
     //número de linhas na table
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
