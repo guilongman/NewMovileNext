@@ -65,21 +65,7 @@ class SeasonViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! EpisodeTableViewCell
         
         let episode = episodes[indexPath.row]
-        
-        
-//        let epSeason = {x
-//            if count(String(episode.seasonNumber)) = 1{
-//                return "0" + String(episode.seasonNumber)
-//            }
-//            else{
-//             return String(episode.seasonNumber)
-//            }
-//        }
-        
-        
-        cell.textLabel!.text = "S\(episode.seasonNumber)E\(episode.number)"
-        cell.detailTextLabel?.text = episode.title
-        
+        cell.loadEpisode(episode)
         return cell
     }
     

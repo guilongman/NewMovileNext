@@ -21,6 +21,23 @@ class EpisodeTableViewCell: UITableViewCell {
         detailTextLabel?.textColor = UIColor.mup_textColor()
         detailTextLabel?.font = UIFont.systemFontOfSize(18)
     }
+    
+    func loadEpisode (episode: Episode)
+    {
+        isAired(episode.firstAired)
+        textLabel!.text = "S\(episode.seasonNumber)E\(episode.number)"
+        detailTextLabel?.text = episode.title
+    }
+    
+    private func isAired (firstAired: NSDate?)
+    {
+        if let fAired : NSDate = firstAired {
+            if NSDate().compare(fAired) == NSComparisonResult.OrderedDescending{
+                textLabel?.textColor = UIColor.grayColor()
+                detailTextLabel?.textColor = UIColor.grayColor()
+            }
+        }
+    }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

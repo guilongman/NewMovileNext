@@ -23,6 +23,8 @@ class SeasonsTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         // Initialization code
+        layoutMargins = UIEdgeInsetsZero
+        preservesSuperviewLayoutMargins = false
     }
     
     func loadSeasons (season: Season)
