@@ -24,9 +24,11 @@ class ShowGenresViewController: UIViewController {
     func loadGenres()
     {
         tagListGenres.textFont = UIFont.systemFontOfSize(12)
-        for genre in self.genres!{
-            tagListGenres.addTag(genre)
-        }
+        self.genres?.map(tagListGenres.addTag)
+        
+//        for genre in self.genres!{
+//            tagListGenres.addTag(genre)
+//        }
     }
 
 }

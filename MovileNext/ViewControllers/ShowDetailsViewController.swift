@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TraktModels
 
 class ShowDetailsViewController: UIViewController {
 
@@ -16,15 +17,22 @@ class ShowDetailsViewController: UIViewController {
     @IBOutlet weak var lblStartedIn: UILabel!
     @IBOutlet weak var lblCountry: UILabel!
     
+    var show : Show!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        loadDetails()
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func loadDetails()
+    {
+        lblNetwork.text = show.network
+        lblStatus.text = show.status?.rawValue.capitalizedString
+        lblAiredEp.text = String(show.airedEpisodes!)
+        lblStartedIn.text = String(show.year)
+        lblCountry.text = show.country?.uppercaseString
     }
     
 

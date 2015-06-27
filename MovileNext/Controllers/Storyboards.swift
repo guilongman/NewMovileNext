@@ -260,6 +260,8 @@ extension ShowInfoViewController {
                 return SeasonsTableViewController.self
             case show_genres:
                 return ShowGenresViewController.self
+            case show_details:
+                return ShowDetailsViewController.self
             default:
                 assertionFailure("Unknown destination")
                 return nil
@@ -307,6 +309,8 @@ extension SeasonsTableViewController {
 
 
 //MARK: - ShowGenresViewController
+
+//MARK: - ShowDetailsViewController
 
 //MARK: - ShowsViewController
 extension UIStoryboardSegue {

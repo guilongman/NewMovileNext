@@ -51,6 +51,10 @@ class ShowInfoViewController: UIViewController {
             let vc = segue.destinationViewController as! ShowGenresViewController
             vc.genres = show!.genres
         }
+        else if segue == Segue.show_details{
+            let vc = segue.destinationViewController as! ShowDetailsViewController
+            vc.show = self.show!
+        }
     }
 
 }
