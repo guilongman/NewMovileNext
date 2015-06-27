@@ -22,6 +22,7 @@
 		CE497F1A1B2DCC9700967F11 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE497F191B2DCC9700967F11 /* EpisodeTableViewCell.swift */; };
 		CE497F1C1B2DD5B000967F11 /* ShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE497F1B1B2DD5B000967F11 /* ShowsViewController.swift */; };
 		CE497F1E1B2DFAB000967F11 /* ShowsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE497F1D1B2DFAB000967F11 /* ShowsCollectionViewCell.swift */; };
+		CE6034F41B3ED9A6008BDDFC /* UIImage+DarkenImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6034F31B3ED9A6008BDDFC /* UIImage+DarkenImage.swift */; };
 		D2D0AFE051D383E5511EA320 /* Pods_MovileNext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681E4D6F5AFE00C238473C65 /* Pods_MovileNext.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		CE497F191B2DCC9700967F11 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		CE497F1B1B2DD5B000967F11 /* ShowsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsViewController.swift; sourceTree = "<group>"; };
 		CE497F1D1B2DFAB000967F11 /* ShowsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE6034F31B3ED9A6008BDDFC /* UIImage+DarkenImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+DarkenImage.swift"; sourceTree = "<group>"; };
 		EF762D3D25C7F9A51D63A87C /* MovileNext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovileNext.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4962294FD3AF06BD92509D4 /* Pods-unit_tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit_tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-unit_tests/Pods-unit_tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,6 +210,7 @@
 		EAD4C2CD76C9BC614CAB9ABE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CE6034F31B3ED9A6008BDDFC /* UIImage+DarkenImage.swift */,
 				CE10CE4C1B2CAE640066047A /* UIColor+MovileNext.swift */,
 			);
 			path = Extensions;
@@ -475,6 +478,7 @@
 				CE497F1E1B2DFAB000967F11 /* ShowsCollectionViewCell.swift in Sources */,
 				CE10CE511B2CB1540066047A /* EpisodeViewController.swift in Sources */,
 				CE10CE4F1B2CAFDA0066047A /* CustomNavigationController.swift in Sources */,
+				CE6034F41B3ED9A6008BDDFC /* UIImage+DarkenImage.swift in Sources */,
 				19E516393F7CF15146240503 /* Storyboards.swift in Sources */,
 				64E4F194B655588224CB79E2 /* Main.storyboard in Sources */,
 				CE497F181B2DBEBF00967F11 /* SeasonViewController.swift in Sources */,

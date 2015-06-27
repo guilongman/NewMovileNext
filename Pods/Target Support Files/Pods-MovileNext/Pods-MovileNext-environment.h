@@ -36,6 +36,12 @@
 #define COCOAPODS_VERSION_MINOR_ISO8601DateFormatter 7
 #define COCOAPODS_VERSION_PATCH_ISO8601DateFormatter 0
 
+// Kingfisher
+#define COCOAPODS_POD_AVAILABLE_Kingfisher
+#define COCOAPODS_VERSION_MAJOR_Kingfisher 1
+#define COCOAPODS_VERSION_MINOR_Kingfisher 4
+#define COCOAPODS_VERSION_PATCH_Kingfisher 1
+
 // Result
 #define COCOAPODS_POD_AVAILABLE_Result
 #define COCOAPODS_VERSION_MAJOR_Result 0

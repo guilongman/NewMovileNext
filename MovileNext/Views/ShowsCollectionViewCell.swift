@@ -8,13 +8,15 @@
 
 import UIKit
 import TraktModels
-import Haneke
+import Kingfisher
 
 class ShowsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var showImage: UIImageView!
     
     @IBOutlet weak var showTitle: UILabel!
+    
+    var task : RetrieveImageTask?
     
     func loadShow(show: Show) {
 
@@ -24,7 +26,7 @@ class ShowsCollectionViewCell: UICollectionViewCell {
         
         let placeholder = UIImage(named: "poster")
         if let image = show.poster?.thumbImageURL{
-            showImage.hnk_setImageFromURL(image, placeholder: placeholder)
+            self.task = showImage.kf_setImageWithURL(image, placeholderImage: placeholder)
         }
         else
         {
@@ -37,8 +39,8 @@ class ShowsCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        showImage.hnk_cancelSetImage()
         showImage.image = nil
+        self.task?.cancel()
     }
     
 }

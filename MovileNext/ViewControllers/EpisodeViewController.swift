@@ -8,6 +8,7 @@
 
 import UIKit
 import TraktModels
+import Kingfisher
 
 class EpisodeViewController: UIViewController {
 
@@ -28,8 +29,9 @@ class EpisodeViewController: UIViewController {
         descTextView.textContainer.lineFragmentPadding = 0
         descTextView.textContainerInset = UIEdgeInsetsZero
         
-        //teste
         loadEpisode(episode!)
+        
+        //teste
         //coverImageView.image = UIImage(named: "bg")
     }
     
@@ -37,8 +39,10 @@ class EpisodeViewController: UIViewController {
     {
         let placeholder = UIImage(named: "bg")
         
-        if let image = episode.screenshot?.fullImageURL{
-            self.coverImageView.hnk_setImageFromURL(image, placeholder: placeholder)
+        if var image = episode.screenshot?.fullImageURL{
+            self.coverImageView.kf_setImageWithURL(image, placeholderImage: placeholder)
+            //self.coverImageView.hnk_setImageFromURL(image, placeholder: placeholder)
+            self.coverImageView.image = self.coverImageView.image?.darkenImage()
         }
         else
         {
