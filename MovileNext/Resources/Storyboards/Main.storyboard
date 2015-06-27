@@ -97,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2BS-uG-ceg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3126" y="347"/>
+            <point key="canvasLocation" x="4263" y="347"/>
         </scene>
         <!--Season-->
         <scene sceneID="fh5-bp-azS">
@@ -160,12 +160,177 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7FN-rD-ek1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2303" y="347"/>
+            <point key="canvasLocation" x="3440" y="347"/>
         </scene>
-        <!--Shows View Controller-->
+        <!--Show Info View Controller-->
+        <scene sceneID="3ww-o2-WIM">
+            <objects>
+                <viewController id="wwM-1m-rgR" customClass="ShowInfoViewController" customModule="MovileNext" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AuF-37-SvN"/>
+                        <viewControllerLayoutGuide type="bottom" id="tJn-4c-bOe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Td2-pL-88L">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zu0-8m-Km9">
+                                <rect key="frame" x="260" y="108" width="80" height="52"/>
+                                <state key="normal" title="Overview">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="E8R-Bk-P4S" kind="show" identifier="show_overview" id="cc0-A0-zxA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjf-hf-Zhe">
+                                <rect key="frame" x="270" y="163" width="60" height="38"/>
+                                <state key="normal" title="Seasons">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="5Qx-xQ-NW2" kind="show" identifier="show_seasons" id="5mC-ob-cFH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f3l-Hj-px5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2188" y="347"/>
+        </scene>
+        <!--Show Overview View Controller-->
+        <scene sceneID="bp0-Tz-irn">
+            <objects>
+                <viewController id="E8R-Bk-P4S" customClass="ShowOverviewViewController" customModule="MovileNext" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UKr-8o-EwZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="IPx-aU-vqu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xfr-k6-jN8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Storyline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMl-rv-UeQ">
+                                <rect key="frame" x="16" y="77" width="335" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Htw-Cp-zYq">
+                                <rect key="frame" x="13" y="107" width="574" height="480"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IPx-aU-vqu" firstAttribute="top" secondItem="Htw-Cp-zYq" secondAttribute="bottom" constant="13" id="8sG-wJ-y8w"/>
+                            <constraint firstAttribute="trailing" secondItem="vMl-rv-UeQ" secondAttribute="trailing" constant="249" id="Jna-lI-44I"/>
+                            <constraint firstItem="Htw-Cp-zYq" firstAttribute="top" secondItem="vMl-rv-UeQ" secondAttribute="bottom" constant="9.5" id="NBv-Ui-1si"/>
+                            <constraint firstItem="vMl-rv-UeQ" firstAttribute="top" secondItem="UKr-8o-EwZ" secondAttribute="bottom" constant="13" id="Ymc-Vo-9EP"/>
+                            <constraint firstItem="vMl-rv-UeQ" firstAttribute="leading" secondItem="Xfr-k6-jN8" secondAttribute="leading" constant="16" id="iye-8A-4bM"/>
+                            <constraint firstItem="Htw-Cp-zYq" firstAttribute="leading" secondItem="Xfr-k6-jN8" secondAttribute="leading" constant="13" id="uJH-nT-nh1"/>
+                            <constraint firstAttribute="trailing" secondItem="Htw-Cp-zYq" secondAttribute="trailing" constant="13" id="vEY-7J-kVb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textOverview" destination="Htw-Cp-zYq" id="GTJ-oA-3eF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j5x-eT-ynp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1632" y="1152"/>
+        </scene>
+        <!--Seasons Table View Controller-->
+        <scene sceneID="3a0-kV-zdl">
+            <objects>
+                <tableViewController id="5Qx-xQ-NW2" customClass="SeasonsTableViewController" customModule="MovileNext" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="122" sectionHeaderHeight="22" sectionFooterHeight="22" id="DM5-DT-9c2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SeasonCell" rowHeight="116" id="Yz7-hz-MeW" customClass="SeasonsTableViewCell" customModule="MovileNext" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yz7-hz-MeW" id="4BC-XJ-gr5">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h1R-9e-uio">
+                                            <rect key="frame" x="13" y="13" width="60" height="90"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="0yc-l7-sHl"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQC-6B-bcf">
+                                            <rect key="frame" x="84" y="13" width="503" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="I1t-Wb-zkF"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qX1-Kc-7Ei">
+                                            <rect key="frame" x="84" y="45" width="503" height="19.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kJz-CU-XxP" customClass="FloatRatingView" customModule="FloatRatingView">
+                                            <rect key="frame" x="84" y="72" width="193" height="30"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="star-gray"/>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="star-yellow"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="minRating">
+                                                    <integer key="value" value="0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="maxRating">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                    <real key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="FQC-6B-bcf" firstAttribute="leading" secondItem="h1R-9e-uio" secondAttribute="trailing" constant="11" id="2ut-Q6-b3B"/>
+                                        <constraint firstAttribute="trailing" secondItem="qX1-Kc-7Ei" secondAttribute="trailing" constant="-20" id="5m9-d6-Htj"/>
+                                        <constraint firstItem="FQC-6B-bcf" firstAttribute="top" secondItem="4BC-XJ-gr5" secondAttribute="top" constant="13" id="C5f-FT-iPf"/>
+                                        <constraint firstItem="h1R-9e-uio" firstAttribute="leading" secondItem="4BC-XJ-gr5" secondAttribute="leading" constant="13" id="OmA-dJ-ITy"/>
+                                        <constraint firstItem="h1R-9e-uio" firstAttribute="top" secondItem="4BC-XJ-gr5" secondAttribute="top" constant="13" id="On8-Zo-KD3"/>
+                                        <constraint firstItem="qX1-Kc-7Ei" firstAttribute="leading" secondItem="h1R-9e-uio" secondAttribute="trailing" constant="11" id="aTo-oz-eq1"/>
+                                        <constraint firstAttribute="trailing" secondItem="FQC-6B-bcf" secondAttribute="trailing" constant="-20" id="bcB-qZ-XyB"/>
+                                        <constraint firstItem="qX1-Kc-7Ei" firstAttribute="top" secondItem="FQC-6B-bcf" secondAttribute="bottom" constant="11" id="m5O-ZO-FLb"/>
+                                        <constraint firstAttribute="bottom" secondItem="h1R-9e-uio" secondAttribute="bottom" constant="13" id="sxB-qd-y3e"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imgSeason" destination="h1R-9e-uio" id="tMN-cR-G1x"/>
+                                    <outlet property="lblNumEpisodes" destination="qX1-Kc-7Ei" id="XFR-Oc-Ntm"/>
+                                    <outlet property="lblSeasonNumber" destination="FQC-6B-bcf" id="Vkt-iC-TBA"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5Qx-xQ-NW2" id="NO3-FV-0mi"/>
+                            <outlet property="delegate" destination="5Qx-xQ-NW2" id="Y2T-9T-EMX"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qdU-Z8-l09" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2409" y="1151"/>
+        </scene>
+        <!--Shows-->
         <scene sceneID="dXw-Bk-KKW">
             <objects>
-                <viewController id="aiw-wc-9rc" customClass="ShowsViewController" customModule="MovileNext" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Shows" id="aiw-wc-9rc" customClass="ShowsViewController" customModule="MovileNext" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pjq-ti-RSP"/>
                         <viewControllerLayoutGuide type="bottom" id="WoT-g0-lTx"/>
@@ -206,7 +371,7 @@
                                         <connections>
                                             <outlet property="showImage" destination="KNo-ee-PT2" id="9pY-M3-kW8"/>
                                             <outlet property="showTitle" destination="cfd-Kd-esp" id="nOj-Zw-YrE"/>
-                                            <segue destination="bSF-SZ-Kty" kind="show" identifier="shows_to_episodes" id="vlm-RS-BhW"/>
+                                            <segue destination="wwM-1m-rgR" kind="show" identifier="show_details" id="1vS-Um-7bS"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -237,5 +402,7 @@
     <resources>
         <image name="bg" width="320" height="200"/>
         <image name="poster" width="96" height="139"/>
+        <image name="star-gray" width="10" height="10"/>
+        <image name="star-yellow" width="10" height="10"/>
     </resources>
 </document>

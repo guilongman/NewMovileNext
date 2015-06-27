@@ -23,6 +23,10 @@
 		CE497F1C1B2DD5B000967F11 /* ShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE497F1B1B2DD5B000967F11 /* ShowsViewController.swift */; };
 		CE497F1E1B2DFAB000967F11 /* ShowsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE497F1D1B2DFAB000967F11 /* ShowsCollectionViewCell.swift */; };
 		CE6034F41B3ED9A6008BDDFC /* UIImage+DarkenImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6034F31B3ED9A6008BDDFC /* UIImage+DarkenImage.swift */; };
+		CE6034F61B3EE5DE008BDDFC /* ShowInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6034F51B3EE5DE008BDDFC /* ShowInfoViewController.swift */; };
+		CE6034F81B3EE7E5008BDDFC /* ShowOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6034F71B3EE7E5008BDDFC /* ShowOverviewViewController.swift */; };
+		CE6034FC1B3EF2C7008BDDFC /* SeasonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6034FB1B3EF2C7008BDDFC /* SeasonsTableViewCell.swift */; };
+		CE6034FE1B3EF50E008BDDFC /* SeasonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6034FD1B3EF50E008BDDFC /* SeasonsTableViewController.swift */; };
 		D2D0AFE051D383E5511EA320 /* Pods_MovileNext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681E4D6F5AFE00C238473C65 /* Pods_MovileNext.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -60,6 +64,10 @@
 		CE497F1B1B2DD5B000967F11 /* ShowsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsViewController.swift; sourceTree = "<group>"; };
 		CE497F1D1B2DFAB000967F11 /* ShowsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE6034F31B3ED9A6008BDDFC /* UIImage+DarkenImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+DarkenImage.swift"; sourceTree = "<group>"; };
+		CE6034F51B3EE5DE008BDDFC /* ShowInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowInfoViewController.swift; sourceTree = "<group>"; };
+		CE6034F71B3EE7E5008BDDFC /* ShowOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowOverviewViewController.swift; sourceTree = "<group>"; };
+		CE6034FB1B3EF2C7008BDDFC /* SeasonsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonsTableViewCell.swift; sourceTree = "<group>"; };
+		CE6034FD1B3EF50E008BDDFC /* SeasonsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonsTableViewController.swift; sourceTree = "<group>"; };
 		EF762D3D25C7F9A51D63A87C /* MovileNext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovileNext.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4962294FD3AF06BD92509D4 /* Pods-unit_tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit_tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-unit_tests/Pods-unit_tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,6 +231,9 @@
 				CE10CE501B2CB1540066047A /* EpisodeViewController.swift */,
 				CE497F171B2DBEBF00967F11 /* SeasonViewController.swift */,
 				CE497F1B1B2DD5B000967F11 /* ShowsViewController.swift */,
+				CE6034F51B3EE5DE008BDDFC /* ShowInfoViewController.swift */,
+				CE6034F71B3EE7E5008BDDFC /* ShowOverviewViewController.swift */,
+				CE6034FD1B3EF50E008BDDFC /* SeasonsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -247,6 +258,7 @@
 			children = (
 				CE497F191B2DCC9700967F11 /* EpisodeTableViewCell.swift */,
 				CE497F1D1B2DFAB000967F11 /* ShowsCollectionViewCell.swift */,
+				CE6034FB1B3EF2C7008BDDFC /* SeasonsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -475,13 +487,17 @@
 				CE1AE1C41B2E1AA20016F2C9 /* TraktHTTPClient.swift in Sources */,
 				CE497F1C1B2DD5B000967F11 /* ShowsViewController.swift in Sources */,
 				B96B09453D6285BDA9A378E9 /* AppDelegate.swift in Sources */,
+				CE6034FE1B3EF50E008BDDFC /* SeasonsTableViewController.swift in Sources */,
+				CE6034FC1B3EF2C7008BDDFC /* SeasonsTableViewCell.swift in Sources */,
 				CE497F1E1B2DFAB000967F11 /* ShowsCollectionViewCell.swift in Sources */,
 				CE10CE511B2CB1540066047A /* EpisodeViewController.swift in Sources */,
 				CE10CE4F1B2CAFDA0066047A /* CustomNavigationController.swift in Sources */,
 				CE6034F41B3ED9A6008BDDFC /* UIImage+DarkenImage.swift in Sources */,
 				19E516393F7CF15146240503 /* Storyboards.swift in Sources */,
 				64E4F194B655588224CB79E2 /* Main.storyboard in Sources */,
+				CE6034F81B3EE7E5008BDDFC /* ShowOverviewViewController.swift in Sources */,
 				CE497F181B2DBEBF00967F11 /* SeasonViewController.swift in Sources */,
+				CE6034F61B3EE5DE008BDDFC /* ShowInfoViewController.swift in Sources */,
 				CE10CE4D1B2CAE640066047A /* UIColor+MovileNext.swift in Sources */,
 				4745F602D9FD72B1B3351BC1 /* LaunchScreen.xib in Sources */,
 			);

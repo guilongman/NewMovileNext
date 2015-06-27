@@ -21,13 +21,13 @@ class ShowsViewController: UIViewController, UICollectionViewDelegate {
     
     //let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
     
-    //let allShows = [ ["GoT": "x"] , ["American Horor History" : "y"], ["GoT": "x"] , ["American Horor History" : "y"], ["GoT": "x"] , ["American Horor History" : "y"], ["GoT": "x"] , ["American Horor History" : "y"], ["GoT": "x"]]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Shows"
         
         loadPopularShows()
         
+        //códigos de teste --> JSON
 //        traktClient.getShow("game-of-thrones") //{ _ in }
 //        traktClient.getEpisode("game-of-thrones", season: 5, episodeNumber: 10)
 //        traktClient.getPopularShows(){ [weak self] x in
@@ -113,12 +113,12 @@ class ShowsViewController: UIViewController, UICollectionViewDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue == Segue.shows_to_episodes{
+        if segue == Segue.show_details{
             if let cell = sender as? UICollectionViewCell,
                 let indexPath = showCollection.indexPathForCell(cell)
             {
-                let vc = segue.destinationViewController as! SeasonViewController
-                vc.show = shows![indexPath.row].identifiers.slug!
+                let vc = segue.destinationViewController as! ShowInfoViewController
+                vc.show = shows![indexPath.row]
             }
         }
     }
