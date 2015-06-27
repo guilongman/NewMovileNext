@@ -47,6 +47,10 @@ class ShowInfoViewController: UIViewController {
             let vc = segue.destinationViewController as! SeasonsTableViewController
             vc.seasons = self.seasons
         }
+        else if segue == Segue.show_genres{
+            let vc = segue.destinationViewController as! ShowGenresViewController
+            vc.genres = show!.genres
+        }
     }
 
 }

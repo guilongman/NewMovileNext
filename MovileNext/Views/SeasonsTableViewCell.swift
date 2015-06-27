@@ -17,16 +17,17 @@ class SeasonsTableViewCell: UITableViewCell {
     @IBOutlet weak var lblNumEpisodes: UILabel!
     @IBOutlet weak var imgSeason: UIImageView!
     @IBOutlet weak var seasonRating: FloatRatingView!
-    
+    @IBOutlet weak var lblRatingNumber: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
     
     func loadSeasons (season: Season)
     {
-        let seasonNumber = (season.number == 0 ? "Especial" : "Season \(season.number)")
+        let seasonNumber = (season.number == 0 ? "Special" : "Season \(season.number)")
         
         lblSeasonNumber.text = seasonNumber
         lblNumEpisodes.text = "\(season.episodeCount!) Episodes"
@@ -41,12 +42,15 @@ class SeasonsTableViewCell: UITableViewCell {
         }
         
         seasonRating.rating = season.rating!
+        lblRatingNumber.text = String(format: "%.1f", season.rating!)        
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imgSeason.image = nil
+        lblNumEpisodes.text = ""
+        lblSeasonNumber.text = ""
+        seasonRating.rating = 0
     }
 
 }
