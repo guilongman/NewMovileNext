@@ -9,7 +9,7 @@
 import UIKit
 import TagListView
 
-class ShowGenresViewController: UIViewController {
+class ShowGenresViewController: UIViewController, ShowInternalViewController {
 
     @IBOutlet weak var tagListGenres: TagListView!
     
@@ -29,6 +29,36 @@ class ShowGenresViewController: UIViewController {
 //        for genre in self.genres!{
 //            tagListGenres.addTag(genre)
 //        }
+    }
+    
+    func intrinsicContentSize() -> CGSize {
+        println(self.view.frame.minY)
+        println(self.view.frame.maxY)
+        println(self.view.frame.size.height)
+        println(tagListGenres.frame.size.height)
+        println(tagListGenres.frame.minY)
+        println(tagListGenres.frame.maxY)
+        
+        let distanciaAteList = tagListGenres.frame.minY
+        let tamanhoList = tagListGenres.frame.size.height
+        let tamanhoBordaBaixo = self.view.frame.size.height - (distanciaAteList + tamanhoList)
+        let height = distanciaAteList + tagListGenres.intrinsicContentSize().height + tamanhoBordaBaixo
+        
+//        println(distanciaAteList)
+//        println(tamanhoList)
+//        println(tamanhoBordaBaixo)
+//        println(x + 1000)
+        
+//        let distanciaAteList = tagListGenres.frame.minY - self.view.frame.minY
+//        let tamanhoList = tagListGenres.intrinsicContentSize().height
+//        let tamanhoBordaBaixo = self.view.frame.size.height - distanciaAteList + tamanhoList
+//        
+//        let height = distanciaAteList + tamanhoList + tamanhoBordaBaixo
+        
+        //let height = tagListGenres.intrinsicContentSize().height + 47
+        println(height)
+        println(tamanhoBordaBaixo)
+        return CGSize(width: tagListGenres.intrinsicContentSize().width, height: height)
     }
 
 }

@@ -3,10 +3,26 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "MovileNext.SeasonsTableViewController.tableView (MovileNext.SeasonsTableViewController)(ObjectiveC.UITableView, numberOfRowsInSection : Swift.Int) -&gt; Swift.Int [inlined]:SeasonsTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "seasons!.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MovileNext.TraktHTTPClient.getShow (MovileNext.TraktHTTPClient)(Swift.String, completion : Swift.Optional&lt;(Result.Result&lt;TraktModels.Show, Swift.Optional&lt;ObjectiveC.NSError&gt;&gt;) -&gt; ()&gt;) -&gt; ():TraktHTTPClient.swift">
          <PersistentStrings>
             <PersistentString
                value = "id">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed, Arg[1] = Owned To Guaranteed, Arg[2] = Owned To Guaranteed&gt; of MovileNext.ShowInfoViewController.prepareForSegue (MovileNext.ShowInfoViewController)(ObjectiveC.UIStoryboardSegue, sender : Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ():ShowInfoViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "seasons">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -18,6 +18,8 @@
 		CE10CE4F1B2CAFDA0066047A /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10CE4E1B2CAFDA0066047A /* CustomNavigationController.swift */; };
 		CE10CE511B2CB1540066047A /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10CE501B2CB1540066047A /* EpisodeViewController.swift */; };
 		CE1AE1C41B2E1AA20016F2C9 /* TraktHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1AE1C31B2E1AA20016F2C9 /* TraktHTTPClient.swift */; };
+		CE3A45F81B4048DD00ABC469 /* ShowInternalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A45F71B4048DD00ABC469 /* ShowInternalViewController.swift */; };
+		CE3A45FA1B408E3A00ABC469 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A45F91B408E3A00ABC469 /* FavoritesManager.swift */; };
 		CE497F181B2DBEBF00967F11 /* SeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE497F171B2DBEBF00967F11 /* SeasonViewController.swift */; };
 		CE497F1A1B2DCC9700967F11 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE497F191B2DCC9700967F11 /* EpisodeTableViewCell.swift */; };
 		CE497F1C1B2DD5B000967F11 /* ShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE497F1B1B2DD5B000967F11 /* ShowsViewController.swift */; };
@@ -61,6 +63,8 @@
 		CE10CE4E1B2CAFDA0066047A /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		CE10CE501B2CB1540066047A /* EpisodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
 		CE1AE1C31B2E1AA20016F2C9 /* TraktHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktHTTPClient.swift; sourceTree = "<group>"; };
+		CE3A45F71B4048DD00ABC469 /* ShowInternalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowInternalViewController.swift; sourceTree = "<group>"; };
+		CE3A45F91B408E3A00ABC469 /* FavoritesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		CE497F171B2DBEBF00967F11 /* SeasonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonViewController.swift; sourceTree = "<group>"; };
 		CE497F191B2DCC9700967F11 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		CE497F1B1B2DD5B000967F11 /* ShowsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 		4C6028160C76F14DCDDC8096 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				CE3A45F71B4048DD00ABC469 /* ShowInternalViewController.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				95D5F8214F45D3709B1F3A6A /* AppDelegate.swift */,
 				603B46243214DE6E406CE0D4 /* Storyboards.swift */,
 				CE1AE1C31B2E1AA20016F2C9 /* TraktHTTPClient.swift */,
+				CE3A45F91B408E3A00ABC469 /* FavoritesManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -489,6 +495,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3A45F81B4048DD00ABC469 /* ShowInternalViewController.swift in Sources */,
 				CE497F1A1B2DCC9700967F11 /* EpisodeTableViewCell.swift in Sources */,
 				CE1AE1C41B2E1AA20016F2C9 /* TraktHTTPClient.swift in Sources */,
 				CE497F1C1B2DD5B000967F11 /* ShowsViewController.swift in Sources */,
@@ -498,6 +505,7 @@
 				CE6034FE1B3EF50E008BDDFC /* SeasonsTableViewController.swift in Sources */,
 				CE6034FC1B3EF2C7008BDDFC /* SeasonsTableViewCell.swift in Sources */,
 				CE497F1E1B2DFAB000967F11 /* ShowsCollectionViewCell.swift in Sources */,
+				CE3A45FA1B408E3A00ABC469 /* FavoritesManager.swift in Sources */,
 				CE10CE511B2CB1540066047A /* EpisodeViewController.swift in Sources */,
 				CE10CE4F1B2CAFDA0066047A /* CustomNavigationController.swift in Sources */,
 				CE6034F41B3ED9A6008BDDFC /* UIImage+DarkenImage.swift in Sources */,

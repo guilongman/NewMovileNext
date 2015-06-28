@@ -8,15 +8,16 @@
 
 import UIKit
 
-class ShowOverviewViewController: UIViewController {
+class ShowOverviewViewController: UIViewController , ShowInternalViewController {
 
-    @IBOutlet weak var textOverview: UITextView!
+    @IBOutlet weak var lblOverview: UILabel!
     
     var overview : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textOverview.text = overview
+        lblOverview.text = overview
+        lblOverview.sizeToFit()
         // Do any additional setup after loading the view.
     }
 
@@ -24,5 +25,13 @@ class ShowOverviewViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func intrinsicContentSize() -> CGSize{
+        let height = 47 + lblOverview.intrinsicContentSize().height
+        
+        return CGSize(width: lblOverview.intrinsicContentSize().width, height: height)
+    }
+    
+    
 
 }

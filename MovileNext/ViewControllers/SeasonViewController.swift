@@ -25,15 +25,15 @@ class SeasonViewController: UIViewController, UITableViewDataSource, UITableView
     //var items: [String] = ["Ep1", "Ep2", "Ep3", "Ep4", "Ep5", "Ep6"]
     
     var episodes : [Episode] = []
-    var show = String()
-    var season = Int()
+    var show : String!
+    var season : Int!
     let traktClient = TraktHTTPClient()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.season = 1
+        self.title = "Season \(season)"
         
         loadEpisodes(show, season: season)
         

@@ -9,13 +9,26 @@
 import UIKit
 import TraktModels
 
-class SeasonsTableViewController: UITableViewController {
+protocol SeasonsTableViewControllerDelegate: class{
+    func seasonsController(vc: SeasonsTableViewController, didSelectSeason season: Season)
+}
+
+class SeasonsTableViewController: UITableViewController, ShowInternalViewController {
 
     var seasons : [Season]!
     
+    weak var delegate : SeasonsTableViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //loadSeasons(self.seasons)
+        //tableView.reloadData()
+    }
+    
+    func loadSeasons(seasons: [Season]?)
+    {
+        self.seasons = seasons
+        tableView.reloadData()
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -27,8 +40,7 @@ class SeasonsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        println(seasons!.count)
-        return seasons!.count
+        return self.seasons?.count ?? 0
     }
 
     
@@ -42,6 +54,15 @@ class SeasonsTableViewController: UITableViewController {
         cell.loadSeasons(seasons![index])
         
         return cell
+    }
+    
+    func intrinsicContentSize() -> CGSize {
+        return tableView.contentSize
+    }
+    
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        let season = seasons[seasons.count - (indexPath.row + 1)]
+        delegate?.seasonsController(self, didSelectSeason: season)
     }
 
 }

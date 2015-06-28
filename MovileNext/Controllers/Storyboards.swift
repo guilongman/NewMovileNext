@@ -232,19 +232,22 @@ extension ShowInfoViewController {
 
     enum Segue: String, Printable, SegueProtocol {
         case show_overview = "show_overview"
-        case show_seasons = "show_seasons"
         case show_genres = "show_genres"
         case show_details = "show_details"
+        case show_seasons = "show_seasons"
+        case show_to_season = "show_to_season"
 
         var kind: SegueKind? {
             switch (self) {
             case show_overview:
-                return SegueKind(rawValue: "show")
-            case show_seasons:
-                return SegueKind(rawValue: "show")
+                return SegueKind(rawValue: "embed")
             case show_genres:
-                return SegueKind(rawValue: "show")
+                return SegueKind(rawValue: "embed")
             case show_details:
+                return SegueKind(rawValue: "embed")
+            case show_seasons:
+                return SegueKind(rawValue: "embed")
+            case show_to_season:
                 return SegueKind(rawValue: "show")
             default:
                 preconditionFailure("Invalid value")
@@ -256,12 +259,14 @@ extension ShowInfoViewController {
             switch (self) {
             case show_overview:
                 return ShowOverviewViewController.self
-            case show_seasons:
-                return SeasonsTableViewController.self
             case show_genres:
                 return ShowGenresViewController.self
             case show_details:
                 return ShowDetailsViewController.self
+            case show_seasons:
+                return SeasonsTableViewController.self
+            case show_to_season:
+                return SeasonViewController.self
             default:
                 assertionFailure("Unknown destination")
                 return nil
