@@ -21,12 +21,12 @@ class TraktHTTPClient {
             headers["Content-Type"] = "application/json"
             headers["trakt-api-key"] = "0e8ba0b2b99aa3ca11348dea4c7053850f644afc1049a34054bff57f02e3f1d5"
             headers["trakt-api-version"] = "2"
-            // ...
+            
             configuration.HTTPAdditionalHeaders = headers
             return configuration
-        }()
+            }()
         return Manager(configuration: configuration)
-    }()
+        }()
     
     private func getJSONElement<T: Decodable where T.DecodedType == T>(router: Router, completion: ((Result<T, NSError?>) -> Void)?){
         manager.request(router).validate().responseJSON { (_, _, jsonResponse, error) in
@@ -54,28 +54,28 @@ class TraktHTTPClient {
         manager.request(router).validate().responseJSON { (_, _, jsonResponse, error) in
             if let jsonData = jsonResponse as? [NSDictionary]
             {
-//                let elements : [T] = []
+                //                let elements : [T] = []
                 let elements = jsonData.map { T.decode(JSON.parse($0)).value }.filter { $0 != nil }.map { $0! }
                 completion?(Result.success(elements))
                 //codigo acima é a mesma implementação do código abaixo
                 //primeiro map, faz o decode do valor
                 //filter remove valores nulos
                 //segundo map, faz o unwrape dos elementos
-//                
-//                for i in 0...jsonData.count-1
-//                {
-//                    let decoded = T.decode(JSON.parse(jsonData[i]))
-//                    if let value = decoded.value
-//                    {
-//                        elements.append(value)
-//                    }
-//                    else
-//                    {
-//                        completion?(Result.failure(nil))
-//                    }
-//                }
-//                
-//                completion?(Result.success(elements))
+                //
+                //                for i in 0...jsonData.count-1
+                //                {
+                //                    let decoded = T.decode(JSON.parse(jsonData[i]))
+                //                    if let value = decoded.value
+                //                    {
+                //                        elements.append(value)
+                //                    }
+                //                    else
+                //                    {
+                //                        completion?(Result.failure(nil))
+                //                    }
+                //                }
+                //
+                //                completion?(Result.success(elements))
             }
             else
             {
@@ -111,6 +111,11 @@ class TraktHTTPClient {
         getJSONElements(router, completion: completion)
     }
     
+    func getShowBasic(traktId: Int, completion: ((Result<Show, NSError?>) -> Void)? = nil){
+        let router = Router.ShowBasic(traktId)
+        getJSONElement(router, completion: completion)
+    }
+    
 }
 
 private enum Router: URLRequestConvertible {
@@ -121,24 +126,26 @@ private enum Router: URLRequestConvertible {
     case PopularShows()
     case Seasons(String)
     case Episodes(String, Int)
-    
+    case ShowBasic(Int)
     
     // MARK: URLRequestConvertible
     var URLRequest: NSURLRequest {
         let (path: String, parameters: [String: AnyObject]?, method: Alamofire.Method) = {
-        switch self {
-    case .Show(let id):
-        return ("shows/\(id)", ["extended": "images,full"], .GET)
-    case .Episode(let id, let season, let episodeNumber):
-        return ("shows/\(id)/seasons/\(season)/episodes/\(episodeNumber)", ["extended": "images,full"], .GET)
-    case .PopularShows():
-        return ("shows/popular", ["extended": "images,full"], .GET)
-    case .Seasons(let showId):
-            return ("shows/\(showId)/seasons", ["extended": "images,full"], .GET)
-    case .Episodes(let showId, let season):
-        return ("shows/\(showId)/seasons/\(season)", ["extended": "images,full"], .GET)
-        }
-        }()
+            switch self {
+            case .Show(let id):
+                return ("shows/\(id)", ["extended": "images,full"], .GET)
+            case .Episode(let id, let season, let episodeNumber):
+                return ("shows/\(id)/seasons/\(season)/episodes/\(episodeNumber)", ["extended": "images,full"], .GET)
+            case .PopularShows():
+                return ("shows/popular", ["extended": "images", "limit" : "70"], .GET)
+            case .Seasons(let showId):
+                return ("shows/\(showId)/seasons", ["extended": "images,full"], .GET)
+            case .Episodes(let showId, let season):
+                return ("shows/\(showId)/seasons/\(season)", ["extended": "images,full"], .GET)
+            case .ShowBasic(let traktId):
+                return ("shows/\(traktId)", ["extended": "images"], .GET)
+            }
+            }()
         
         let URL = NSURL(string: Router.baseURLString)!
         let URLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))

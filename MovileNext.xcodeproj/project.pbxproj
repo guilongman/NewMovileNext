@@ -24,6 +24,8 @@
 		CE497F1A1B2DCC9700967F11 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE497F191B2DCC9700967F11 /* EpisodeTableViewCell.swift */; };
 		CE497F1C1B2DD5B000967F11 /* ShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE497F1B1B2DD5B000967F11 /* ShowsViewController.swift */; };
 		CE497F1E1B2DFAB000967F11 /* ShowsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE497F1D1B2DFAB000967F11 /* ShowsCollectionViewCell.swift */; };
+		CE51F0E01B4829180018740A /* UINavigationBar+BottomHairline.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51F0DF1B4829180018740A /* UINavigationBar+BottomHairline.swift */; };
+		CE51F0E21B4858EB0018740A /* NSDate+Comparing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51F0E11B4858EB0018740A /* NSDate+Comparing.swift */; };
 		CE6034F41B3ED9A6008BDDFC /* UIImage+DarkenImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6034F31B3ED9A6008BDDFC /* UIImage+DarkenImage.swift */; };
 		CE6034F61B3EE5DE008BDDFC /* ShowInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6034F51B3EE5DE008BDDFC /* ShowInfoViewController.swift */; };
 		CE6034F81B3EE7E5008BDDFC /* ShowOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6034F71B3EE7E5008BDDFC /* ShowOverviewViewController.swift */; };
@@ -69,6 +71,8 @@
 		CE497F191B2DCC9700967F11 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		CE497F1B1B2DD5B000967F11 /* ShowsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsViewController.swift; sourceTree = "<group>"; };
 		CE497F1D1B2DFAB000967F11 /* ShowsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE51F0DF1B4829180018740A /* UINavigationBar+BottomHairline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+BottomHairline.swift"; sourceTree = "<group>"; };
+		CE51F0E11B4858EB0018740A /* NSDate+Comparing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Comparing.swift"; sourceTree = "<group>"; };
 		CE6034F31B3ED9A6008BDDFC /* UIImage+DarkenImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+DarkenImage.swift"; sourceTree = "<group>"; };
 		CE6034F51B3EE5DE008BDDFC /* ShowInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowInfoViewController.swift; sourceTree = "<group>"; };
 		CE6034F71B3EE7E5008BDDFC /* ShowOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowOverviewViewController.swift; sourceTree = "<group>"; };
@@ -227,8 +231,10 @@
 		EAD4C2CD76C9BC614CAB9ABE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CE51F0DF1B4829180018740A /* UINavigationBar+BottomHairline.swift */,
 				CE6034F31B3ED9A6008BDDFC /* UIImage+DarkenImage.swift */,
 				CE10CE4C1B2CAE640066047A /* UIColor+MovileNext.swift */,
+				CE51F0E11B4858EB0018740A /* NSDate+Comparing.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -500,6 +506,7 @@
 				CE1AE1C41B2E1AA20016F2C9 /* TraktHTTPClient.swift in Sources */,
 				CE497F1C1B2DD5B000967F11 /* ShowsViewController.swift in Sources */,
 				CE6035001B3F2422008BDDFC /* ShowGenresViewController.swift in Sources */,
+				CE51F0E21B4858EB0018740A /* NSDate+Comparing.swift in Sources */,
 				CE6035021B3F2AFE008BDDFC /* ShowDetailsViewController.swift in Sources */,
 				B96B09453D6285BDA9A378E9 /* AppDelegate.swift in Sources */,
 				CE6034FE1B3EF50E008BDDFC /* SeasonsTableViewController.swift in Sources */,
@@ -511,6 +518,7 @@
 				CE6034F41B3ED9A6008BDDFC /* UIImage+DarkenImage.swift in Sources */,
 				19E516393F7CF15146240503 /* Storyboards.swift in Sources */,
 				64E4F194B655588224CB79E2 /* Main.storyboard in Sources */,
+				CE51F0E01B4829180018740A /* UINavigationBar+BottomHairline.swift in Sources */,
 				CE6034F81B3EE7E5008BDDFC /* ShowOverviewViewController.swift in Sources */,
 				CE497F181B2DBEBF00967F11 /* SeasonViewController.swift in Sources */,
 				CE6034F61B3EE5DE008BDDFC /* ShowInfoViewController.swift in Sources */,
@@ -636,6 +644,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -694,6 +703,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};

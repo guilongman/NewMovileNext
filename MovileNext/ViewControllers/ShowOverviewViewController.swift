@@ -16,9 +16,12 @@ class ShowOverviewViewController: UIViewController , ShowInternalViewController 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    
+    func loadOverview(overview: String){
         lblOverview.text = overview
         lblOverview.sizeToFit()
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +30,9 @@ class ShowOverviewViewController: UIViewController , ShowInternalViewController 
     }
     
     func intrinsicContentSize() -> CGSize{
-        let height = 47 + lblOverview.intrinsicContentSize().height
+        
+        // altura da label do titulo + label dinamica + borda
+        let height = lblOverview.frame.minY + lblOverview.intrinsicContentSize().height + (self.view.frame.height - (lblOverview.frame.minY + lblOverview.frame.height))
         
         return CGSize(width: lblOverview.intrinsicContentSize().width, height: height)
     }

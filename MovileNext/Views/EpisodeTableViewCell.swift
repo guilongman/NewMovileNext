@@ -16,33 +16,43 @@ class EpisodeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         textLabel?.textColor = UIColor.grayColor()
-        textLabel?.font = UIFont.systemFontOfSize(15)
+        textLabel?.font = UIFont(name: "HelveticaNeue", size: 15)
         
         detailTextLabel?.textColor = UIColor.mup_textColor()
-        detailTextLabel?.font = UIFont.systemFontOfSize(18)
+        detailTextLabel?.font = UIFont(name: "HelveticaNeue", size: 18)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
     }
     
     func loadEpisode (episode: Episode)
     {
-        isAired(episode.firstAired)
         textLabel!.text = "S\(episode.seasonNumber)E\(episode.number)"
-        detailTextLabel?.text = episode.title
-    }
-    
-    private func isAired (firstAired: NSDate?)
-    {
-        if let fAired : NSDate = firstAired {
-            if NSDate().compare(fAired) == NSComparisonResult.OrderedDescending{
-                textLabel?.textColor = UIColor.grayColor()
+        
+        if episode.firstAired != nil {
+            if episode.firstAired!.isGreater(NSDate()){
+                detailTextLabel?.textColor = UIColor.grayColor()
+            }
+            else {
+                detailTextLabel?.textColor = UIColor.mup_textColor()
+            }
+        }
+        
+        if episode.overview != nil {
+            if episode.title != nil{
+                detailTextLabel?.text = episode.title
+            }
+            else {
+                detailTextLabel?.text = "Episódio indisponível"
                 detailTextLabel?.textColor = UIColor.grayColor()
             }
         }
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        else {
+            detailTextLabel?.text = "Episódio indisponível"
+            detailTextLabel?.textColor = UIColor.grayColor()
+        }
+        
     }
 
 }

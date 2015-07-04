@@ -8,6 +8,7 @@
 
 import UIKit
 import TraktModels
+import Spring
 
 /*
 
@@ -32,6 +33,7 @@ class SeasonViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.showLoading()
         
         self.title = "Season \(season)"
         
@@ -46,6 +48,7 @@ class SeasonViewController: UIViewController, UITableViewDataSource, UITableView
             if let episodes = result.value{
                 self?.episodes = episodes
                 self?.tableSeason.reloadData()
+                self?.view.hideLoading()
             }
             else
             {
@@ -69,6 +72,10 @@ class SeasonViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableSeason.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue == Segue.season_to_episode{
@@ -79,5 +86,25 @@ class SeasonViewController: UIViewController, UITableViewDataSource, UITableView
                     vc.episode = episodes[indexPath.row]
             }
         }
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        if identifier == Segue.season_to_episode.identifier{
+            if let cell = sender as? UITableViewCell,
+                let indexPath = tableSeason.indexPathForCell(cell){
+                    if episodes[indexPath.row].overview == nil{
+                        
+                        let alert = UIAlertView()
+                        alert.title = "Episódio Indisponível"
+                        alert.addButtonWithTitle("Ok")
+                        alert.show()
+                        
+                        return false
+                    }
+            }
+        }
+        
+        return true
+        
     }
 }

@@ -60,7 +60,7 @@ class SeasonsTableViewController: UITableViewController, ShowInternalViewControl
         return tableView.contentSize
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let season = seasons[seasons.count - (indexPath.row + 1)]
         delegate?.seasonsController(self, didSelectSeason: season)
     }

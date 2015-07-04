@@ -6,7 +6,6 @@ PODS:
   - BorderedView (0.1.0)
   - Box (1.2.2)
   - FloatRatingView (0.1.0)
-  - HanekeSwift (0.9.1)
   - ISO8601DateFormatter (0.7)
   - Kingfisher (1.4.1)
   - Nimble (0.4.2)
@@ -15,6 +14,7 @@ PODS:
   - Result (0.4.4):
     - Box (~> 1.2)
   - Runes (2.0.0)
+  - Spring (1.0.3)
   - TagListView (0.1.4)
   - TraktModels (0.1.0):
     - Argo (~> 1.0)
@@ -26,12 +26,12 @@ DEPENDENCIES:
   - Argo
   - BorderedView
   - FloatRatingView (from `https://github.com/strekfus/FloatRatingView.git`)
-  - HanekeSwift
   - Kingfisher
   - Nimble
   - OHHTTPStubs
   - OverlayView (from `https://github.com/marcelofabri/OverlayView.git`)
   - Result
+  - Spring (from `https://github.com/MengTo/Spring.git`)
   - TagListView
   - TraktModels (from `https://github.com/marcelofabri/TraktModels.git`)
 
@@ -40,6 +40,8 @@ EXTERNAL SOURCES:
     :git: https://github.com/strekfus/FloatRatingView.git
   OverlayView:
     :git: https://github.com/marcelofabri/OverlayView.git
+  Spring:
+    :git: https://github.com/MengTo/Spring.git
   TraktModels:
     :git: https://github.com/marcelofabri/TraktModels.git
 
@@ -50,6 +52,9 @@ CHECKOUT OPTIONS:
   OverlayView:
     :commit: 348f514234a1d6e83ee294ab18a982c3e53c528d
     :git: https://github.com/marcelofabri/OverlayView.git
+  Spring:
+    :commit: 84f5beaf456d655ee3913bf019d39a96f4455cac
+    :git: https://github.com/MengTo/Spring.git
   TraktModels:
     :commit: f116bbd988f0fad472865cfcc1a09dcd14d6ce70
     :git: https://github.com/marcelofabri/TraktModels.git
@@ -60,7 +65,6 @@ SPEC CHECKSUMS:
   BorderedView: d5a4373310d6c7c0fa922eade7ca13672541dad8
   Box: a92e8aa4c099e6bc0733829665caf9e668ef53b8
   FloatRatingView: 4159f5ac29ba5bbc6f8cf62737e64329efac72f2
-  HanekeSwift: 50d37bfbc4432edc649167e538c259feccb4a2bb
   ISO8601DateFormatter: ab926648eebe497f4d167c0fd083992f959f1274
   Kingfisher: 962a21cdc2a7b0fa63be3b2c45ea6f180feda535
   Nimble: 49b7a7da8919f42823d37c6d68cc6d15a7009f32
@@ -68,6 +72,7 @@ SPEC CHECKSUMS:
   OverlayView: cdfcc457c101fa1c95a8eb58adb69d534617db09
   Result: b44f6bc8762bbffaf2c5df58f2c7d12c3496ced8
   Runes: 4fe81355f4620b76b02176222d264b33e60dba51
+  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   TagListView: 86fcd7616973096aeaaf71bf774eecacf483c1fb
   TraktModels: 7303801cdcaf89358f4bd71fd68fa59aba1468d9
 

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "43A5BB0C4C1D63C5AE8CE1BB"
+               BlueprintIdentifier = "E431D76B05F1787FE80697A2"
                BuildableName = "BorderedView.framework"
                BlueprintName = "Pods-MovileNext-BorderedView"
                ReferencedContainer = "container:Pods.xcodeproj">

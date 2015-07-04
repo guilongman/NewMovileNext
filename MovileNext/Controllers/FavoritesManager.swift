@@ -10,25 +10,46 @@ import UIKit
 import Foundation
 
 class FavoritesManager {
-    let defaults = NSUserDefaults.standardUserDefaults()
     
-    var favoritesIdentifiers: Set<Int> = []
+    static let favoritesChangedNotificationName = "FavoritesChanged"
+    static let key = "shows"
     
-    func read() -> Set<Int>
-    {
-        var letters = Set<Character>()
-        var identifiers : Set<Int>()
-        identifiers.insert(1)
+    var favoritesIdentifiers: Set<Int> = {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        var aux = Set<Int>()
         
-        if let values = defaults.arrayForKey("shows") as? [Int]{
-            for value in values{
-                //identifiers.insert(value)
-            }
+        if let favorites = defaults.arrayForKey(key) as? [Int]{
+            favorites.map{aux.insert($0)}
         }
-        return identifiers
-    }
+        return aux
+    }()
     
     func addIdentifier(identifier: Int){
-        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        self.favoritesIdentifiers.insert(identifier)
+        defaults.setObject(Array(self.favoritesIdentifiers), forKey: self.dynamicType.key)
+        defaults.synchronize()
+        postarNotificao()
     }
+    
+    func removeIdentifier(identifier: Int) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        self.favoritesIdentifiers.remove(identifier)
+        defaults.removeObjectForKey(self.dynamicType.key)
+        defaults.setObject(Array(self.favoritesIdentifiers), forKey: self.dynamicType.key)
+        defaults.synchronize()
+        postarNotificao()
+    }
+    
+    func contains(identifier: Int) -> Bool{
+        return self.favoritesIdentifiers.contains(identifier)
+    }
+    
+    func postarNotificao ()
+    {
+        let name = self.dynamicType.favoritesChangedNotificationName
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.postNotificationName(name, object: self)
+    }
+
 }

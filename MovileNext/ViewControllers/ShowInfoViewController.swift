@@ -10,6 +10,7 @@ import UIKit
 import TraktModels
 import FloatRatingView
 import Kingfisher
+import Spring
 
 class ShowInfoViewController: UIViewController, SeasonsTableViewControllerDelegate {
     
@@ -28,30 +29,66 @@ class ShowInfoViewController: UIViewController, SeasonsTableViewControllerDelega
     @IBOutlet weak var seasonsConstraintHeight: NSLayoutConstraint!
     @IBOutlet weak var genresConstraintHeight: NSLayoutConstraint!
     
+    
+    
     @IBOutlet weak var imgShow: UIImageView!
     @IBOutlet weak var lblShowYear: UILabel!
     @IBOutlet weak var viewFloatRating: FloatRatingView!
     @IBOutlet weak var lblRating: UILabel!
+    @IBOutlet weak var btnLike: UIButton!
     
+    
+    var showLoaded : Bool = false
+    var seasonsLoaded : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.showLoading()
         self.title = show!.title
         
-        loadShowInfo(self.show)
-        
-        //obtem todas as temporadas do show
-        traktClient.getSeasons(show.identifiers.slug!){ [weak self] result in
-            if let seasons = result.value{
-                self?.seasons = seasons
-                self?.seasonsViewController.loadSeasons(seasons)
+        loadShow()
+    }
+    
+    func loadShow ()
+    {
+        traktClient.getShow(show.identifiers.slug!){ [weak self] result in
+            if let fullShow = result.value{
+                self?.show = fullShow
+                
+                self?.loadShowInfo(fullShow)
+                self?.detailsViewController.loadDetails(fullShow)
+                self?.overviewViewController.loadOverview(fullShow.overview!)
+                self?.genresViewController.loadGenres(fullShow.genres!)
+                
+                self?.showLoaded = true
+                self?.isLoaded(self!.showLoaded, seasons: self!.seasonsLoaded)
             }
             else{
                 println(result.error)
             }
         }
         
-        // Do any additional setup after loading the view.
+        //obtem todas as temporadas do show
+        traktClient.getSeasons(show.identifiers.slug!){ [weak self] result in
+            if let seasons = result.value{
+                self?.seasons = seasons
+                self?.seasonsViewController.loadSeasons(seasons)
+                self?.seasonsLoaded = true
+                self?.isLoaded(self!.showLoaded, seasons: self!.seasonsLoaded)
+            }
+            else{
+                println(result.error)
+            }
+        }
+
+    }
+    
+    func isLoaded (show: Bool, seasons: Bool)
+    {
+        if show == true && seasons == true
+        {
+            view.hideLoading()
+        }
     }
     
     func loadShowInfo(show: Show)
@@ -68,7 +105,27 @@ class ShowInfoViewController: UIViewController, SeasonsTableViewControllerDelega
         lblShowYear.text = String(show.year)
         viewFloatRating.rating = show.rating!
         lblRating.text = String(format: "%.1f", show.rating!)
+        if FavoritesManager().contains(show.identifiers.trakt){
+            btnLike.selected = true
+            //btnLike.imageView?.image = UIImage(named: "like-heart-on")
+        }
+    }
+    
+    @IBAction func doFavoriteShow(sender: UIButton) {
+        let favoriteM = FavoritesManager()
+        let identifier = show.identifiers.trakt
         
+        if favoriteM.contains(identifier){
+            favoriteM.removeIdentifier(identifier)
+            btnLike.selected = false
+            
+            //btnLike.setImage(UIImage(named: "like-heart"), forState: .Normal)
+        }
+        else{
+            favoriteM.addIdentifier(identifier)
+            btnLike.selected = true
+            //btnLike.setImage(UIImage(named: "like-heart-on"), forState: .Normal)
+        }
     }
     
     override func viewWillLayoutSubviews(){

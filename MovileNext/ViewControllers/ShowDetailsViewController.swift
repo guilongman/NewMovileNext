@@ -21,19 +21,20 @@ class ShowDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadDetails()
         // Do any additional setup after loading the view.
     }
 
-    private func loadDetails()
+    func loadDetails(show: Show)
     {
+        
         lblNetwork.text = show.network
         lblStatus.text = show.status?.rawValue.capitalizedString
         lblAiredEp.text = String(show.airedEpisodes!)
         lblStartedIn.text = String(show.year)
         lblCountry.text = show.country?.uppercaseString
+        
     }
+
     
 
     /*

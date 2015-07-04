@@ -36,12 +36,6 @@
 #define COCOAPODS_VERSION_MINOR_FloatRatingView 1
 #define COCOAPODS_VERSION_PATCH_FloatRatingView 0
 
-// HanekeSwift
-#define COCOAPODS_POD_AVAILABLE_HanekeSwift
-#define COCOAPODS_VERSION_MAJOR_HanekeSwift 0
-#define COCOAPODS_VERSION_MINOR_HanekeSwift 9
-#define COCOAPODS_VERSION_PATCH_HanekeSwift 1
-
 // ISO8601DateFormatter
 #define COCOAPODS_POD_AVAILABLE_ISO8601DateFormatter
 #define COCOAPODS_VERSION_MAJOR_ISO8601DateFormatter 0
@@ -71,6 +65,12 @@
 #define COCOAPODS_VERSION_MAJOR_Runes 2
 #define COCOAPODS_VERSION_MINOR_Runes 0
 #define COCOAPODS_VERSION_PATCH_Runes 0
+
+// Spring
+#define COCOAPODS_POD_AVAILABLE_Spring
+#define COCOAPODS_VERSION_MAJOR_Spring 1
+#define COCOAPODS_VERSION_MINOR_Spring 0
+#define COCOAPODS_VERSION_PATCH_Spring 3
 
 // TagListView
 #define COCOAPODS_POD_AVAILABLE_TagListView
