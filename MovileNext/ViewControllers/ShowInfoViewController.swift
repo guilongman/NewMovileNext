@@ -38,6 +38,7 @@ class ShowInfoViewController: UIViewController, SeasonsTableViewControllerDelega
     @IBOutlet weak var btnLike: UIButton!
     
     
+    
     var showLoaded : Bool = false
     var seasonsLoaded : Bool = false
     
@@ -45,6 +46,9 @@ class ShowInfoViewController: UIViewController, SeasonsTableViewControllerDelega
         super.viewDidLoad()
         view.showLoading()
         self.title = show!.title
+        
+        //como criar uma notificação para o usuário
+        criaNotificacao()
         
         loadShow()
     }
@@ -115,17 +119,41 @@ class ShowInfoViewController: UIViewController, SeasonsTableViewControllerDelega
         let favoriteM = FavoritesManager()
         let identifier = show.identifiers.trakt
         
+        let favorited = !sender.selected
+        UIView.transitionWithView(sender, duration: 0.4, options: .TransitionCrossDissolve, animations: {
+            sender.selected = favorited
+            }, completion: nil)
+        
+        
+        //animação mais baixo nível, mais customizavel
+        //faz o botão LIKE pulsar, ou seja, ela vai de 1% a 1.2% quando é curtida uma série e quando descurtida, faz o movimento contrário, indo de 1% a 0.8%
+        let pulseAnimation = CABasicAnimation(keyPath: "transform.scale")
+        pulseAnimation.duration = 0.4
+        pulseAnimation.fromValue = 1
+        pulseAnimation.toValue = favorited ? 1.2 : 0.8
+        
+        //autoreverses significa que a animação faz o caminho de volta, ou seja, ela aumenta / diminui a imagem e depois volta ao tamanho normal
+        pulseAnimation.autoreverses = true
+        //quantas vezes essa animação será repetida
+        pulseAnimation.repeatCount = 1
+        
+        pulseAnimation.timingFunction = CAMediaTimingFunction(name:  kCAMediaTimingFunctionEaseInEaseOut)
+        sender.layer.addAnimation(pulseAnimation, forKey: nil)
+        
         if favoriteM.contains(identifier){
             favoriteM.removeIdentifier(identifier)
-            btnLike.selected = false
-            
-            //btnLike.setImage(UIImage(named: "like-heart"), forState: .Normal)
         }
         else{
             favoriteM.addIdentifier(identifier)
-            btnLike.selected = true
-            //btnLike.setImage(UIImage(named: "like-heart-on"), forState: .Normal)
         }
+    }
+    
+    func criaNotificacao (){
+        var notification : UILocalNotification = UILocalNotification()
+        notification.alertAction = "Novo episódio de Game of Thrones disponível"
+        notification.alertBody = "Mother's Mercy"
+        notification.fireDate = NSDate(timeIntervalSinceNow: 15)
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
     override func viewWillLayoutSubviews(){
@@ -159,13 +187,17 @@ class ShowInfoViewController: UIViewController, SeasonsTableViewControllerDelega
         else if segue == Segue.show_to_season{
             let vc = segue.destinationViewController as! SeasonViewController
             vc.show = self.show.identifiers.slug!
-            vc.season = self.selectedSeason.number
+            vc.season = self.selectedSeason
         }
     }
     
     func seasonsController(vc: SeasonsTableViewController, didSelectSeason season: Season){
         selectedSeason = season
         performSegue(Segue.show_to_season, sender: nil)
+    }
+    
+    deinit{
+        println("\(self.dynamicType) deinit")
     }
 
 }

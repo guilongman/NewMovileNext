@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovileNext/ViewControllers/ShowsViewController.swift"
-            timestampString = "457734562.566413"
+            timestampString = "457814554.581461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
-            landmarkName = "prepareForSegue(_:sender:)"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "deinit"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -121,11 +121,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovileNext/ViewControllers/ShowInfoViewController.swift"
-            timestampString = "457729375.892553"
+            timestampString = "457816398.720865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -137,11 +137,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovileNext/ViewControllers/ShowInfoViewController.swift"
-            timestampString = "457729375.892553"
+            timestampString = "457816398.720865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -153,11 +153,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovileNext/ViewControllers/SeasonViewController.swift"
-            timestampString = "457732362.838796"
+            timestampString = "457816722.999594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "shouldPerformSegueWithIdentifier(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -169,11 +169,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovileNext/ViewControllers/SeasonViewController.swift"
-            timestampString = "457732362.838796"
+            timestampString = "457816722.999594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -181,7 +181,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovileNext/Controllers/FavoritesManager.swift"
@@ -194,14 +194,14 @@
             landmarkType = "19">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "MovileNext.FavoritesManager.init (MovileNext.FavoritesManager.Type)() -&gt; MovileNext.FavoritesManager"
                   moduleName = "MovileNext"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/User/MovileNext/MovileNext/Controllers/FavoritesManager.swift"
-                  timestampString = "457734490.927524"
+                  timestampString = "457811282.439706"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -209,14 +209,14 @@
                   offsetFromSymbolStart = "32">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "MovileNext.FavoritesManager.__allocating_init (MovileNext.FavoritesManager.Type)() -&gt; MovileNext.FavoritesManager"
                   moduleName = "MovileNext"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/User/MovileNext/MovileNext/Controllers/FavoritesManager.swift"
-                  timestampString = "457734490.927688"
+                  timestampString = "457811282.439808"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -224,14 +224,14 @@
                   offsetFromSymbolStart = "69">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "MovileNext.FavoritesManager.__allocating_init (MovileNext.FavoritesManager.Type)() -&gt; MovileNext.FavoritesManager"
                   moduleName = "MovileNext"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/User/MovileNext/MovileNext/Controllers/FavoritesManager.swift"
-                  timestampString = "457734490.927925"
+                  timestampString = "457811282.439906"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -239,6 +239,22 @@
                   offsetFromSymbolStart = "81">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovileNext/ViewControllers/ShowsViewController.swift"
+            timestampString = "457814554.581461"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "loadFavoritesShows(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

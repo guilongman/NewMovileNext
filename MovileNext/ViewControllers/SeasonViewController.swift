@@ -9,6 +9,7 @@
 import UIKit
 import TraktModels
 import Spring
+import FloatRatingView
 
 /*
 
@@ -23,11 +24,16 @@ class SeasonViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBOutlet weak var tableSeason: UITableView!
     
+    @IBOutlet weak var seasonImage: UIImageView!
+    @IBOutlet weak var showImage: UIImageView!
+    @IBOutlet weak var seasonRating: FloatRatingView!
+    @IBOutlet weak var labelRating: UILabel!
+    
     //var items: [String] = ["Ep1", "Ep2", "Ep3", "Ep4", "Ep5", "Ep6"]
     
     var episodes : [Episode] = []
     var show : String!
-    var season : Int!
+    var season : Season!
     let traktClient = TraktHTTPClient()
     
     
@@ -35,16 +41,41 @@ class SeasonViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         self.view.showLoading()
         
-        self.title = "Season \(season)"
+        self.title = "Season \(season.number)"
         
         loadEpisodes(show, season: season)
+        
+        loadSeasonInfo(self.season)
         
         // Do any additional setup after loading the view.
     }
     
-    func loadEpisodes (showId: String, season: Int)
+    func loadSeasonInfo (season: Season){
+        let placeholderSeason = UIImage(named: "bg")
+        let placeholderShow = UIImage(named: "poster")
+        
+        if let imageSeason = season.thumbImageURL{
+            seasonImage.kf_setImageWithURL(imageSeason, placeholderImage: placeholderSeason)
+        }
+        else{
+            seasonImage.image = placeholderSeason
+        }
+        
+        if let imageShow = season.poster?.fullImageURL{
+            showImage.kf_setImageWithURL(imageShow, placeholderImage: placeholderSeason)
+        }
+        else{
+            showImage.image = placeholderShow
+        }
+        
+        seasonRating.rating = season.rating!
+        labelRating.text = String(format: "%.1f", season.rating!)
+        
+    }
+    
+    func loadEpisodes (showId: String, season: Season)
     {
-        traktClient.getEpisodes(showId, season: season){ [weak self] result in
+        traktClient.getEpisodes(showId, season: season.number){ [weak self] result in
             if let episodes = result.value{
                 self?.episodes = episodes
                 self?.tableSeason.reloadData()
@@ -106,5 +137,9 @@ class SeasonViewController: UIViewController, UITableViewDataSource, UITableView
         
         return true
         
+    }
+    
+    deinit{
+        println("\(self.dynamicType) deinit")
     }
 }

@@ -58,5 +58,9 @@ class EpisodeViewController: UIViewController {
         presentViewController(vc, animated: true, completion: nil)
         //println("pressed")
     }
+    
+    deinit{
+        println("\(self.dynamicType) deinit")
+    }
 
 }

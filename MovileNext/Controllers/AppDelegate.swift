@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appearance.titleTextAttributes = attrs
         appearance.tintColor = UIColor.whiteColor()
         
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound |
+            UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
+        
         return true;
     }
 }
